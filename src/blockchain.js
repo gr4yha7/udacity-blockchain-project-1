@@ -14,14 +14,6 @@ const bitcoinMessage = require('bitcoinjs-message');
 
 class Blockchain {
 
-    /**
-     * Constructor of the class, you will need to setup your chain array and the height
-     * of your chain (the length of your chain array).
-     * Also everytime you create a Blockchain class you will need to initialized the chain creating
-     * the Genesis Block.
-     * The methods in this class will always return a Promise to allow client applications or
-     * other backends to call asynchronous functions.
-     */
     constructor() {
         this.chain = [];
         this.height = -1;
