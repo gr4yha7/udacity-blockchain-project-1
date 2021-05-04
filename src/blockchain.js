@@ -118,7 +118,7 @@ class Blockchain {
             let messageTime = parseInt(message.split(':')[1]);
             let currentTime = parseInt(new Date().getTime().toString().slice(0, -3));
             let elapsed = currentTime - messageTime
-            // if (elapsed < 300) {
+            if (elapsed < 300) {
                 let messageVerified = bitcoinMessage.verify(message, address, signature)
                 if (messageVerified) {
                     let block = new BlockClass.Block({owner: address, star})
@@ -126,7 +126,7 @@ class Blockchain {
                     console.log(block)
                     resolve(block)
                 } else reject('Message unverified!')
-            // } else reject('Timeout')
+            } else reject('Timeout')
         });
     }
 
